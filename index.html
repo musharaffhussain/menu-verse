@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KFC Zinger Burger AR</title>
+  <title>Menu Verse AR</title>
 
   <link rel="stylesheet" href="style.css">
 
-  <script type="module"
+  <script
+    type="module"
     src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js">
   </script>
 </head>
@@ -15,29 +16,29 @@
 
   <div class="hero">
 
+    <!-- TOP SECTION -->
     <div class="top">
 
       <div class="title-section">
         <span class="brand">KFC</span>
 
-        <h1>Zinger Burger</h1>
+        <h1 id="name"></h1>
 
-        <p>Crispy. Fiery. Iconic.</p>
+        <p id="tagline"></p>
       </div>
 
       <div class="price-box">
-        <h2>₹249</h2>
-        <span>⭐ 4.6</span>
+        <h2 id="price"></h2>
+        <span id="rating"></span>
       </div>
 
     </div>
 
-    <!-- 3D BURGER PREVIEW -->
+    <!-- 3D PREVIEW -->
     <div class="viewer-section">
 
       <model-viewer
         id="burgerViewer"
-        src="zinger_burger.glb"
         camera-controls
         auto-rotate
         rotation-per-second="25deg"
@@ -45,17 +46,20 @@
         exposure="1.1"
         ar
         ar-modes="scene-viewer webxr quick-look"
-        interaction-prompt="none">
+        interaction-prompt="none"
+        loading="eager">
 
       </model-viewer>
 
     </div>
 
+    <!-- TAGS -->
     <div class="tags">
-      <span>🔥 650 cal</span>
-      <span>🌶 Medium Spicy</span>
+      <span id="calories"></span>
+      <span id="spice"></span>
     </div>
 
+    <!-- BUTTONS -->
     <div class="controls">
 
       <button id="arBtn">
@@ -74,19 +78,17 @@
 
   </div>
 
-  <!-- SECOND SECTION -->
+  <!-- DETAILS SECTION -->
 
   <section class="bottom">
+
+    <!-- LEFT CARD -->
 
     <div class="left-card">
 
       <h2>About this dish</h2>
 
-      <p>
-        A hand-breaded chicken fillet marinated in a secret blend,
-        crowned with fresh lettuce and signature sauce inside
-        a toasted sesame bun.
-      </p>
+      <p id="description"></p>
 
       <div class="columns">
 
@@ -94,12 +96,7 @@
 
           <h3>INGREDIENTS</h3>
 
-          <ul>
-            <li>Chicken fillet</li>
-            <li>Sesame bun</li>
-            <li>Lettuce</li>
-            <li>Signature sauce</li>
-            <li>Pickles</li>
+          <ul id="ingredients">
           </ul>
 
         </div>
@@ -108,10 +105,7 @@
 
           <h3>ALLERGENS</h3>
 
-          <ul>
-            <li>Gluten</li>
-            <li>Egg</li>
-            <li>Soy</li>
+          <ul id="allergens">
           </ul>
 
         </div>
@@ -119,6 +113,8 @@
       </div>
 
     </div>
+
+    <!-- RIGHT SIDE -->
 
     <div class="right-side">
 
@@ -128,17 +124,17 @@
 
         <div class="row">
           <span>Calories</span>
-          <strong>650 kcal</strong>
+          <strong id="nutritionCalories"></strong>
         </div>
 
         <div class="row">
           <span>Rating</span>
-          <strong>4.6 ⭐</strong>
+          <strong id="nutritionRating"></strong>
         </div>
 
         <div class="row">
           <span>Spice</span>
-          <strong>Medium Spicy</strong>
+          <strong id="nutritionSpice"></strong>
         </div>
 
       </div>
@@ -147,14 +143,8 @@
 
         <h3>ADD-ONS</h3>
 
-        <div class="row">
-          <span>Cheese slice</span>
-          <strong>₹40</strong>
-        </div>
+        <div id="addons">
 
-        <div class="row">
-          <span>Extra patty</span>
-          <strong>₹120</strong>
         </div>
 
       </div>
