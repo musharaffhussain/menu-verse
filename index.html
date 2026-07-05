@@ -1,50 +1,169 @@
-<script type="module"
-src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js">
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KFC Zinger Burger AR</title>
 
-<section class="hero">
+  <link rel="stylesheet" href="style.css">
 
-  <div class="top">
-    <div>
-      <span>KFC</span>
-      <h1>Zinger Burger</h1>
-      <p>Crispy. Fiery. Iconic.</p>
+  <script type="module"
+    src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js">
+  </script>
+</head>
+<body>
+
+  <div class="hero">
+
+    <div class="top">
+
+      <div class="title-section">
+        <span class="brand">KFC</span>
+
+        <h1>Zinger Burger</h1>
+
+        <p>Crispy. Fiery. Iconic.</p>
+      </div>
+
+      <div class="price-box">
+        <h2>₹249</h2>
+        <span>⭐ 4.6</span>
+      </div>
+
     </div>
 
-    <div class="price-box">
-      <h2>₹249</h2>
-      <span>⭐ 4.6</span>
+    <!-- 3D BURGER PREVIEW -->
+    <div class="viewer-section">
+
+      <model-viewer
+        id="burgerViewer"
+        src="zinger_burger.glb"
+        camera-controls
+        auto-rotate
+        rotation-per-second="25deg"
+        shadow-intensity="1"
+        exposure="1.1"
+        ar
+        ar-modes="scene-viewer webxr quick-look"
+        interaction-prompt="none">
+
+      </model-viewer>
+
     </div>
+
+    <div class="tags">
+      <span>🔥 650 cal</span>
+      <span>🌶 Medium Spicy</span>
+    </div>
+
+    <div class="controls">
+
+      <button id="arBtn">
+        ✨ View in AR
+      </button>
+
+      <button id="pauseBtn">
+        Pause
+      </button>
+
+      <button id="resetBtn">
+        Reset view
+      </button>
+
+    </div>
+
   </div>
 
-  <!-- Burger Preview -->
-  <div class="burger-preview">
+  <!-- SECOND SECTION -->
 
-    <model-viewer
-      id="burgerViewer"
-      src="./models/zinger_burger.glb"
-      camera-controls
-      auto-rotate
-      rotation-per-second="30deg"
-      shadow-intensity="1"
-      exposure="1.1"
-      ar
-      ar-modes="scene-viewer webxr quick-look"
-      interaction-prompt="none">
+  <section class="bottom">
 
-    </model-viewer>
+    <div class="left-card">
 
-  </div>
+      <h2>About this dish</h2>
 
-  <div class="tags">
-    <span>🔥 650 kcal</span>
-    <span>🌶 Medium Spicy</span>
-  </div>
+      <p>
+        A hand-breaded chicken fillet marinated in a secret blend,
+        crowned with fresh lettuce and signature sauce inside
+        a toasted sesame bun.
+      </p>
 
-  <div class="controls">
-    <button id="arBtn">✨ View in AR</button>
-    <button id="pauseBtn">Pause</button>
-    <button id="resetBtn">Reset View</button>
-  </div>
+      <div class="columns">
 
-</section>
+        <div>
+
+          <h3>INGREDIENTS</h3>
+
+          <ul>
+            <li>Chicken fillet</li>
+            <li>Sesame bun</li>
+            <li>Lettuce</li>
+            <li>Signature sauce</li>
+            <li>Pickles</li>
+          </ul>
+
+        </div>
+
+        <div>
+
+          <h3>ALLERGENS</h3>
+
+          <ul>
+            <li>Gluten</li>
+            <li>Egg</li>
+            <li>Soy</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="right-side">
+
+      <div class="card">
+
+        <h3>NUTRITION</h3>
+
+        <div class="row">
+          <span>Calories</span>
+          <strong>650 kcal</strong>
+        </div>
+
+        <div class="row">
+          <span>Rating</span>
+          <strong>4.6 ⭐</strong>
+        </div>
+
+        <div class="row">
+          <span>Spice</span>
+          <strong>Medium Spicy</strong>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <h3>ADD-ONS</h3>
+
+        <div class="row">
+          <span>Cheese slice</span>
+          <strong>₹40</strong>
+        </div>
+
+        <div class="row">
+          <span>Extra patty</span>
+          <strong>₹120</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
