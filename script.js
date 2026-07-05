@@ -187,7 +187,7 @@ const menu = {
     rating: "4.8",
     calories: "890 kcal",
     spice: "Mild",
-    model: "Ben’s lasagna (1).glb",
+    model: "lasagna.glb",
     description:
       "Layers of pasta sheets, rich tomato sauce and melted cheese baked to perfection.",
 
