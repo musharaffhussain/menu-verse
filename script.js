@@ -1,19 +1,15 @@
-const viewer = document.getElementById("burgerViewer");
+const menu = {
+  burger: {
+    name: "Zinger Burger",
+    price: "₹249",
+    rating: "4.6",
+    model: "zinger_burger.glb"
+  },
 
-document
-  .getElementById("arBtn")
-  .addEventListener("click", () => {
-    viewer.activateAR();
-  });
-
-document
-  .getElementById("pauseBtn")
-  .addEventListener("click", () => {
-    viewer.autoRotate = !viewer.autoRotate;
-  });
-
-document
-  .getElementById("resetBtn")
-  .addEventListener("click", () => {
-    viewer.cameraOrbit = "0deg 75deg 100%";
-  });
+  pizza: {
+    name: "Pepperoni Pizza",
+    price: "₹399",
+    rating: "4.8",
+    model: "Small pizza photogrammetry.glb"
+  }
+};
