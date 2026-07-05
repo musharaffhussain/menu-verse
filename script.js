@@ -216,3 +216,119 @@ const menu = {
     ]
   }
 };
+
+/* GET ITEM FROM URL */
+
+const params = new URLSearchParams(window.location.search);
+const item = params.get("item") || "burger";
+const food = menu[item] || menu.burger;
+
+/* TOP SECTION */
+
+document.getElementById("name").textContent =
+  food.name;
+
+document.getElementById("tagline").textContent =
+  food.tagline;
+
+document.getElementById("price").textContent =
+  food.price;
+
+document.getElementById("rating").textContent =
+  "⭐ " + food.rating;
+
+/* TAGS */
+
+document.getElementById("calories").textContent =
+  "🔥 " + food.calories;
+
+document.getElementById("spice").textContent =
+  "🌶 " + food.spice;
+
+/* DESCRIPTION */
+
+document.getElementById("description").textContent =
+  food.description;
+
+/* MODEL */
+
+const viewer =
+  document.getElementById("burgerViewer");
+
+viewer.src = food.model;
+
+/* INGREDIENTS */
+
+const ingredients =
+  document.getElementById("ingredients");
+
+ingredients.innerHTML = "";
+
+food.ingredients.forEach((ingredient) => {
+  ingredients.innerHTML += `<li>${ingredient}</li>`;
+});
+
+/* ALLERGENS */
+
+const allergens =
+  document.getElementById("allergens");
+
+allergens.innerHTML = "";
+
+food.allergens.forEach((allergen) => {
+  allergens.innerHTML += `<li>${allergen}</li>`;
+});
+
+/* NUTRITION */
+
+document.getElementById(
+  "nutritionCalories"
+).textContent = food.calories;
+
+document.getElementById(
+  "nutritionRating"
+).textContent =
+  food.rating + " ⭐";
+
+document.getElementById(
+  "nutritionSpice"
+).textContent =
+  food.spice;
+
+/* ADDONS */
+
+const addons =
+  document.getElementById("addons");
+
+addons.innerHTML = "";
+
+food.addons.forEach((addon) => {
+  addons.innerHTML += `
+    <div class="row">
+      <span>${addon.name}</span>
+      <strong>${addon.price}</strong>
+    </div>
+  `;
+});
+
+/* BUTTONS */
+
+document
+  .getElementById("arBtn")
+  .addEventListener("click", () => {
+    viewer.activateAR();
+  });
+
+document
+  .getElementById("pauseBtn")
+  .addEventListener("click", () => {
+    viewer.autoRotate =
+      !viewer.autoRotate;
+  });
+
+document
+  .getElementById("resetBtn")
+  .addEventListener("click", () => {
+    viewer.cameraOrbit =
+      "0deg 75deg 100%";
+  });
